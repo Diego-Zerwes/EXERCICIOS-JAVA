@@ -145,7 +145,6 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
        }else{
          if (vInsUpdate == 0) { 
              model.CadastroProduto produto = new model.CadastroProduto(
-                //Integer.parseInt(txtId.getText()),
                 txtNome.getText(),
                 Integer.parseInt(txtQuantidade.getText()),
                 Double.parseDouble(txtValor.getText())
@@ -154,22 +153,16 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
 
         CadastroProdutoDao produtoDAO = new CadastroProdutoDao();
         produtoDAO.inserir(produto);
-         CadastroProdutoDao CadastroProdutos = new CadastroProdutoDao();
+        CadastroProdutoDao CadastroProdutos = new CadastroProdutoDao();
          
-          CadastroProdutoDao cadastroProdutos = new CadastroProdutoDao();
+        CadastroProdutoDao cadastroProdutos = new CadastroProdutoDao();
 
             JOptionPane.showMessageDialog(null, "Cadastro efetuado:"+ "\n" +  
                 "ID" + txtId.getText() + "\n" +
                 "Nome: " + txtNome.getText() + "\n" +
                 "Quantidade: " + txtQuantidade.getText() + "\n" +
                 "valor: " + txtValor.getText() + "\n");
-
-                //DefaultTableModel tbcadastro = (DefaultTableModel) jTable1.getModel();
-              //  Object [] dados = {txtId.getText(),txtNome.getText(), txtPreco.getText(), txtQuantidade.getText(), txtDescricao.getText()};
-               // tbcadastro.addRow(dados);        
-                
-                
-
+ 
                 int msgRetorno = JOptionPane.showConfirmDialog(null, 
                                       "Deseja limpar os campos?", 
                                       "Confirmação", 
