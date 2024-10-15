@@ -15,7 +15,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class dashbord extends javax.swing.JFrame {
     private vendas telaVendas;
-    private listaVendas telaListaVendas; // Referência para a lista de vendas
+    private listaVendas telaListaVendas; 
     public dashbord() {
         initComponents();
     }
@@ -152,14 +152,12 @@ public class dashbord extends javax.swing.JFrame {
             this.telaVendas = new vendas(); 
             desktop.add(telaVendas); 
             this.telaVendas.setVisible(true);
-
-           
-            
+ 
             this.telaVendas.atualizaTabela(cadastroProdutos);
         } else {
             limparTabela(telaListaVendas);
             this.telaVendas.atualizaTabela(cadastroProdutos);
-           this.telaVendas.toFront(); // Leva a tela para frente se já estiver aberta
+           this.telaVendas.toFront(); 
         }
     }//GEN-LAST:event_jButton2ActionPerformed
     private listaVendas tela3;
@@ -176,7 +174,7 @@ public class dashbord extends javax.swing.JFrame {
         } else {
             limparTabela(telaListaVendas);
              this.telaListaVendas.atualizaTabela(cadastroProdutos);
-            this.telaListaVendas.toFront(); // Leva a tela para frente se já estiver aberta
+            this.telaListaVendas.toFront(); 
             
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -187,16 +185,13 @@ public class dashbord extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
-        CadastroProdutoDao cadastroProdutos = new CadastroProdutoDao();
+    CadastroProdutoDao cadastroProdutos = new CadastroProdutoDao();
 
-    // Verifica se a tela de lista de vendas já foi inicializada
     if (telaListaVendas == null || !telaListaVendas.isVisible()) {
         telaListaVendas = new listaVendas();
         desktop.add(telaListaVendas);
         telaListaVendas.setVisible(true);
     }
-
-    // Atualiza a tabela de vendas após criar a tela
     atualizaTabela(cadastroProdutos);
     }//GEN-LAST:event_formWindowOpened
 
@@ -209,7 +204,7 @@ public class dashbord extends javax.swing.JFrame {
         
 
                  try {
-            //limparTabela(telaListaVendas); // Limpa a tabela antes de adicionar novos dados
+            //limparTabela(telaListaVendas); 
             ArrayList<model.CadastroProduto> listaCadastros = cadastroProd.consultar();      
             DefaultTableModel modeloTabela = (DefaultTableModel) this.telaListaVendas.jTableLista.getModel();
 
@@ -231,7 +226,7 @@ public class dashbord extends javax.swing.JFrame {
     {
         if (telaListaVendas != null && telaListaVendas.jTableLista != null) {
         DefaultTableModel dm = (DefaultTableModel) telaListaVendas.jTableLista.getModel();
-        dm.setRowCount(0); // Remove todas as linhas da tabela
+        dm.setRowCount(0);
     } else {
         JOptionPane.showMessageDialog(null, "A tabela não está disponível ou não foi inicializada.");
     }
